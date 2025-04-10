@@ -22,4 +22,66 @@
           // Code to be executed
       }
   }
+  # Java Cheat Sheet
+
+## 1. Comments
+
+- **Single-line**: 
+  ```java
+  // This is a single-line comment
+## 2. Variables and Data Types
+
+- **Primitive Data Types**:
+  - **byte**: 8-bit integer, range: -128 to 127
+    ```java
+    byte exampleByte = 100;
+    ```
+
+  - **short**: 16-bit integer, range: -32,768 to 32,767
+    ```java
+    short exampleShort = 10000;
+    ```
+
+  - **int**: 32-bit integer, range: -2^31 to 2^31-1
+    ```java
+    int exampleInt = 123456789;
+    ```
+
+  - **long**: 64-bit integer, range: -2^63 to 2^63-1
+    ```java
+    long exampleLong = 12345678901L;  // 'L' suffix indicates long literal
+    ```
+
+  - **float**: 32-bit floating point, suitable for saving memory in large arrays
+    ```java
+    float exampleFloat = 3.14f;  // 'f' suffix indicates float literal
+    ```
+
+  - **double**: 64-bit floating point, double precision
+    ```java
+    double exampleDouble = 3.14159265358979;
+    ```
+
+  - **char**: 16-bit Unicode character, e.g., 'A'
+    ```java
+    char exampleChar = 'A';
+    ```
+
+  - **boolean**: true or false value
+    ```java
+    boolean exampleBoolean = true;
+    ```
+
+- **Non-Primitive Data Types**:
+  - **String**: Represents a sequence of characters.
+    ```java
+    String greeting = "Hello, World!";
+    ```
+
+  - **Array**: A collection of similar types of data.
+    ```java
+    int[] numbers = {1, 2, 3, 4, 5};  // Array with initial values
+    ```
+
+
  
