@@ -82,6 +82,47 @@
     ```java
     int[] numbers = {1, 2, 3, 4, 5};  // Array with initial values
     ```
+    ## 4. Operators
+
+- **Arithmetic Operators**: Used to perform basic mathematical operations.
+  - `+` (Addition)
+  - `-` (Subtraction)
+  - `*` (Multiplication)
+  - `/` (Division)
+  - `%` (Modulus)
+
+- **Assignment Operators**: Used to assign values to variables.
+  - `=` (Assign)
+  - `+=` (Add and assign)
+  - `-=` (Subtract and assign)
+  - `*=` (Multiply and assign)
+  - `/=` (Divide and assign)
+  - `%=` (Modulus and assign)
+
+- **Comparison Operators**: Used to compare two values.
+  - `==` (Equal to)
+  - `!=` (Not equal to)
+  - `>` (Greater than)
+  - `<` (Less than)
+  - `>=` (Greater than or equal to)
+  - `<=` (Less than or equal to)
+
+- **Logical Operators**: Used to combine conditional statements.
+  - `&&` (Logical AND)
+  - `||` (Logical OR)
+  - `!` (Logical NOT)
+
+## 5. Control Flow
+
+- **If Statement**: Executes a block of code if a specified condition is true.
+
+  ```java
+  if (condition) {
+      // Code to execute if condition is true
+  } else {
+      // Code to execute if condition is false
+  }
+
 
 
  
