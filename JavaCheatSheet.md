@@ -123,16 +123,15 @@
       // Code to execute if condition is false
   }
   @echo off
-**Batch (.cmd)**:
-```cmd
+```java
 @echo off
 set var=5
 
-if %var%==5 (
+if (var==5) {
     echo Condition is true
-) else (
+} else {
     echo Condition is false
-)
+}
 ```
 
 ---
@@ -152,9 +151,7 @@ switch (choice) {
         // Default code
 }
 ```
-
-**Batch (.cmd)**:
-```cmd
+```java
 @echo off
 set choice=2
 
@@ -180,14 +177,11 @@ echo Invalid option selected.
 
 ### 🔹 While Loop
 
-**Java**:
 ```java
 while (condition) {
     // Code to execute
 }
 ```
-
-**Batch (.cmd)**:
 ```cmd
 @echo off
 setlocal enabledelayedexpansion
@@ -206,14 +200,11 @@ endlocal
 
 ### 🔹 For Loop
 
-**Java**:
 ```java
 for (int i = 1; i <= 5; i++) {
     // Code to execute
 }
 ```
-
-**Batch (.cmd)**:
 ```cmd
 @echo off
 for /L %%i in (1,1,5) do (
@@ -225,14 +216,12 @@ for /L %%i in (1,1,5) do (
 
 ### 🔹 Do-While Loop
 
-**Java**:
 ```java
 do {
     // Code to execute
 } while (condition);
 ```
 
-**Batch (.cmd)**:
 ```cmd
 @echo off
 setlocal enabledelayedexpansion
