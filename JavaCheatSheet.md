@@ -114,7 +114,7 @@
 
 ## 5. Control Flow
 
-- **If Statement**: Executes a block of code if a specified condition is true.
+- **5.1 If Statement**: Executes a block of code if a specified condition is true.
 
   ```java
   if (condition) {
@@ -136,7 +136,7 @@ if (var==5) {
 
 ---
 
-## Switch Statement in Java
+## 5.2 Switch Statement in Java
 
 The `switch` statement selects one of many blocks of code to execute based on a variable's value.
 
@@ -154,11 +154,11 @@ switch (expression) {
         // Code to execute if expression does not match any case
 }
 ```
-## Loops in Java
+## 5.3 Loops in Java
 
 Loops are used for repeated execution of a block of code.
 
-### 1. While Loop
+### 5.3.1. While Loop
 
 The `while` loop repeats a block of code as long as a specified condition is true.
 
@@ -172,7 +172,7 @@ while (condition) {
     // Code to execute
 }
 ```
-## 2.For Loop in Java
+## 5.3.2.For Loop in Java
 
 The `for` loop is used when the number of iterations is known.
 
@@ -183,7 +183,7 @@ for (initialization; condition; update) {
     // Code to execute
 }
 ```
-## 3.Do-While Loop in Java
+## 5.3.3.Do-While Loop in Java
 
 The `do-while` loop is similar to a `while` loop, but it guarantees that the block of code will execute at least once, even if the condition is false.
 
@@ -193,6 +193,42 @@ The `do-while` loop is similar to a `while` loop, but it guarantees that the blo
 do {
     // Code to execute
 } while (condition);
+```
+## 6. Arrarys in java
+
+Arrays are used to store multiple values in a single variable. They can be declared and initialized in various ways.
+
+### 1. Declaration and Initialization
+
+#### Declaration:
+
+```java
+// Declaration
+int[] numbers;  // Array of integers
+
+// Initialization
+numbers = new int[5];  // Array with 5 elements
+
+// Declaration and Initialization
+int[] numbers = {1, 2, 3, 4, 5};  // Array with initial values
+
+int firstNumber = numbers[0];  // Access first element
+
+numbers[1] = 10;  // Modify second element
+
+//Example
+public class ArrayExample {
+    public static void main(String[] args) {
+        // Declare and initialize the array
+        int[] numbers = {1, 2, 3, 4, 5};
+
+        // Accessing and modifying elements
+        System.out.println("First number: " + numbers[0]);  // Access first element
+        numbers[1] = 10;  // Modify second element
+        System.out.println("Modified second number: " + numbers[1]);
+    }
+}
+
 
 
 
