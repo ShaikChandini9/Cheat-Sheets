@@ -153,6 +153,7 @@ switch (expression) {
     default:
         // Code to execute if expression does not match any case
 }
+```
 ## Loops in Java
 
 Loops are used for repeated execution of a block of code.
@@ -165,6 +166,9 @@ The `while` loop repeats a block of code as long as a specified condition is tru
 
 ```java
 while (condition) {
+    // Code to execute
+}
+
     // Code to execute
 }
 
