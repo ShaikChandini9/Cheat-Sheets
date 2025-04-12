@@ -171,4 +171,28 @@ while (condition) {
 
     // Code to execute
 }
+```
+## 2.For Loop in Java
+
+The `for` loop is used when the number of iterations is known.
+
+### Syntax:
+
+```java
+for (initialization; condition; update) {
+    // Code to execute
+}
+```
+## 3.Do-While Loop in Java
+
+The `do-while` loop is similar to a `while` loop, but it guarantees that the block of code will execute at least once, even if the condition is false.
+
+### Syntax:
+
+```java
+do {
+    // Code to execute
+} while (condition);
+
+
 
