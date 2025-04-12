@@ -11,19 +11,20 @@
   - **Secure**: Java has built-in security features such as bytecode verification and a security manager to restrict access to system resources.
   - **Robust**: Java emphasizes strong memory management, exception handling, and type checking to prevent crashes and errors.
   - **Multithreaded**: Java supports concurrent programming, allowing multiple threads to run simultaneously for efficient resource use.
- 
+  
  - **Java Virtual Machine**:
   - **JVM**: A virtual machine that enables a computer to run Java programs. It converts Java bytecode into machine 
     code for execution.
-  -**JVM Architecture**:
-    -**Class Loader**: Loads class files into memory.
-    -**Execution Engine**: Executes the bytecode.
-    -**Garbage Collector**: Automatic memory management to reclaim memory used by objects no longer referenced.
 
--**Java Development Tools**:
-    -**Java Development Kit (JDK)**: A software development kit used to develop Java applications.
-    -**Java Runtime Environment (JRE)**: A part of the JDK that allows Java programs to run.
-    -**Integrated Development Environment (IDE)**: Tools like Eclipse, IntelliJ IDEA, and NetBeans provide a user-friendly environment for developing Java applications.
+- **JVM Architecture**:
+ - **Class Loader**: Loads class files into memory.
+ - **Execution Engine**: Executes the bytecode.
+ - **Garbage Collector**: Automatic memory management to reclaim memory used by objects no longer referenced.
+ 
+- **Java Development Tools**:
+ - **Java Development Kit (JDK)**: A software development kit used to develop Java applications.
+ - **Java Runtime Environment (JRE)**: A part of the JDK that allows Java programs to run.
+ - **Integrated Development Environment (IDE)**: Tools like Eclipse, IntelliJ IDEA, and NetBeans provide a user-friendly environment for developing Java applications.
 
 ## 2. Java Syntax
 
