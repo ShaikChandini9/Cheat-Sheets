@@ -122,6 +122,60 @@
   } else {
       // Code to execute if condition is false
   }
+  @echo off
+setlocal
+
+:: Set the variable to check
+set choice=2
+
+:: Simulated switch statement
+if "%choice%"=="1" goto case1
+if "%choice%"=="2" goto case2
+goto default
+
+:case1
+echo You selected option 1.
+goto end
+
+:case2
+echo You selected option 2.
+goto end
+
+:default
+echo Invalid option selected.
+
+:end
+endlocal
+
+@echo off
+setlocal enabledelayedexpansion
+
+:: ----------- While Loop (Simulated) -----------
+echo --- While Loop ---
+set count=1
+:while_loop
+if !count! LEQ 5 (
+    echo Count is !count!
+    set /a count+=1
+    goto while_loop
+)
+
+:: ----------- For Loop (Using built-in FOR) -----------
+echo --- For Loop ---
+for /L %%i in (1,1,5) do (
+    echo Index is %%i
+)
+
+:: ----------- Do-While Loop (Simulated) -----------
+echo --- Do-While Loop ---
+set value=1
+:do_while
+echo Value is !value!
+set /a value+=1
+if !value! LEQ 5 goto do_while
+
+endlocal
+
 
 
 
