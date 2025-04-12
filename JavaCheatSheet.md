@@ -124,51 +124,10 @@
   }
   @echo off
 @echo off
-setlocal enabledelayedexpansion
+set var=5
 
-:: ----------- Switch Statement Simulation -----------
-echo --- Switch Statement Example ---
-set choice=2
-
-if "%choice%"=="1" goto case1
-if "%choice%"=="2" goto case2
-goto default
-
-:case1
-echo You selected option 1.
-goto switch_end
-
-:case2
-echo You selected option 2.
-goto switch_end
-
-:default
-echo Invalid option selected.
-
-:switch_end
-
-:: ----------- While Loop (Simulated) -----------
-echo --- While Loop ---
-set count=1
-:while_loop
-if !count! LEQ 5 (
-    echo Count is !count!
-    set /a count+=1
-    goto while_loop
+if %var%==5 (
+    echo Condition is true
+) else (
+    echo Condition is false
 )
-
-:: ----------- For Loop (Built-in FOR) -----------
-echo --- For Loop ---
-for /L %%i in (1,1,5) do (
-    echo Index is %%i
-)
-
-:: ----------- Do-While Loop (Simulated) -----------
-echo --- Do-While Loop ---
-set value=1
-:do_while
-echo Value is !value!
-set /a value+=1
-if !value! LEQ 5 goto do_while
-
-endlocal
