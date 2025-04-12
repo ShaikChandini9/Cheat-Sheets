@@ -136,100 +136,20 @@ if (var==5) {
 
 ---
 
-### 🔹 Switch Statement (Simulated in Batch)
+## Switch Statement in Java
 
-**Java**:
+The `switch` statement selects one of many blocks of code to execute based on a variable's value.
+
+### Syntax:
+
 ```java
-switch (choice) {
-    case 1:
-        // Code for case 1
+switch (expression) {
+    case value1:
+        // Code to execute if expression matches value1
         break;
-    case 2:
-        // Code for case 2
+    case value2:
+        // Code to execute if expression matches value2
         break;
     default:
-        // Default code
+        // Code to execute if expression does not match any case
 }
-```
-```java
-@echo off
-set choice=2
-
-if "%choice%"=="1" goto case1
-if "%choice%"=="2" goto case2
-goto default
-
-:case1
-echo You selected option 1.
-goto end
-
-:case2
-echo You selected option 2.
-goto end
-
-:default
-echo Invalid option selected.
-
-:end
-```
-
----
-
-### 🔹 While Loop
-
-```java
-while (condition) {
-    // Code to execute
-}
-```
-```cmd
-@echo off
-setlocal enabledelayedexpansion
-set count=1
-
-:while_loop
-if !count! LEQ 5 (
-    echo Count is !count!
-    set /a count+=1
-    goto while_loop
-)
-endlocal
-```
-
----
-
-### 🔹 For Loop
-
-```java
-for (int i = 1; i <= 5; i++) {
-    // Code to execute
-}
-```
-```cmd
-@echo off
-for /L %%i in (1,1,5) do (
-    echo Index is %%i
-)
-```
-
----
-
-### 🔹 Do-While Loop
-
-```java
-do {
-    // Code to execute
-} while (condition);
-```
-
-```cmd
-@echo off
-setlocal enabledelayedexpansion
-set value=1
-
-:do_while
-echo Value is !value!
-set /a value+=1
-if !value! LEQ 5 goto do_while
-
-endlocal
