@@ -213,7 +213,6 @@ numbers = new int[5];  // Array with 5 elements
 int[] numbers = {1, 2, 3, 4, 5};  // Array with initial values
 
 Accessing Elements: Access array elements using their index.
-
 int firstNumber = numbers[0];  // Access first element
 
 numbers[1] = 10;  // Modify second element
