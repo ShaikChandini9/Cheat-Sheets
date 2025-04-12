@@ -229,6 +229,72 @@ public class ArrayExample {
         System.out.println("Modified second number: " + numbers[1]);
     }
 }
+```
+## 7.Methods in java
+ Method Declaration: Methods are blocks of code that perform a specific task.
+ ```java
+ returnType methodName(parameters) {
+    // Code to execute
+    return value; // Only if returnType is not void
+}
+```
+Calling a Method: Use the method name followed by parentheses to invoke it.
+```java
+methodName(arguments);
+
+```
+Method Overloading: The ability to define multiple methods with the same name but different parameter lists.
+
+```java
+public int add(int a, int b) {
+    return a + b;
+}
+
+public double add(double a, double b) {
+    return a + b;
+}
+
+```
+## 7.Object-Oriented Programming (OOP):
+Classes and Objects: A class is a blueprint for creating objects. An object is an instance of a class.
+```java
+public class Dog {
+    // Fields (attributes)
+    String name;
+    int age;
+
+    // Methods (behavior)
+    void bark() {
+        System.out.println("Woof!");
+    }
+}
+
+// Creating an object
+Dog myDog = new Dog();
+myDog.name = "Buddy";
+myDog.age = 3;
+myDog.bark(); // Outputs: Woof!
+
+```
+Constructors: Special methods used to initialize objects. A constructor has the same name as the class and no return type.
+```java
+public class Dog {
+    String name;
+    int age;
+
+    // Constructor
+    public Dog(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+// Creating an object with the constructor
+Dog myDog = new Dog("Buddy", 3);
+
+
+
+
 
 
 
