@@ -200,7 +200,7 @@ Arrays are used to store multiple values in a single variable. They can be decla
 
 ### 1. Declaration and Initialization
 
-#### Declaration:
+#### Declaration and Initialization: Arrays can be declared and initialized in various ways.
 
 ```java
 // Declaration
@@ -211,6 +211,8 @@ numbers = new int[5];  // Array with 5 elements
 
 // Declaration and Initialization
 int[] numbers = {1, 2, 3, 4, 5};  // Array with initial values
+
+Accessing Elements: Access array elements using their index.
 
 int firstNumber = numbers[0];  // Access first element
 
