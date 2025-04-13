@@ -120,4 +120,16 @@ JUnit 5 allows customization of test execution order using the `@TestMethodOrder
   public void testDivisionByZero() {
       int result = 10 / 0;
   }
+### JUnit 5 Exception Handling with assertThrows
+
+In JUnit 5, the `@Test(expected = Exception.class)` from JUnit 4 is replaced by `assertThrows`. Here's an example of how to test that an exception is thrown:
+
+```java
+@Test
+void testThrowsException() {
+    ArithmeticException thrown = assertThrows(ArithmeticException.class, () -> {
+        int result = 10 / 0;
+    });
+    assertEquals("divide by zero", thrown.getMessage());
+}
 
