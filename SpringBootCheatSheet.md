@@ -1,5 +1,3 @@
-# 🌱 Complete Guide to Spring Framework
-
 ## 🔷 1. What is Spring Framework?
 
 The **Spring Framework** is a powerful, feature-rich **open-source Java platform** primarily used to build **enterprise-level applications**.
