@@ -102,13 +102,6 @@ This repository contains theoretical cheat sheets for Java, JUnit, and Spring Bo
 
 ---
 
-## Contributing
 
-Feel free to fork this repository and submit pull requests with any additional theoretical topics or corrections. This repository is meant to be a community-driven resource!
 
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
