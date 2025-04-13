@@ -183,6 +183,7 @@ void testMocking() {
     assertEquals(5, mockedList.size());
 }
 
+```
 ## JUnit 5 Extensions
 
 JUnit 5 introduces a powerful concept called **Extensions**. These are hooks into the lifecycle of tests that provide additional functionality (e.g., logging, parameterized tests, and custom test conditions).
