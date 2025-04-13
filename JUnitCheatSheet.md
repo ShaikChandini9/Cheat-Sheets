@@ -132,4 +132,18 @@ void testThrowsException() {
     });
     assertEquals("divide by zero", thrown.getMessage());
 }
+```
+## JUnit 4 vs JUnit 5 Differences
+
+```java
+
+| **Feature**             | **JUnit 4**                       | **JUnit 5**                            |
+|-------------------------|-----------------------------------|----------------------------------------|
+| **Core Framework**       | `JUnitCore`                       | `JUnitPlatform`                        |
+| **Annotations**          | `@Before`, `@After`, `@Test`      | `@BeforeEach`, `@AfterEach`, `@Test`   |
+| **Parameterized Tests**  | `@RunWith(Parameterized.class)`   | `@ParameterizedTest`                   |
+| **Assumptions**          | `Assume.assumeTrue()`             | `Assumptions.assumeTrue()`             |
+| **Test Suites**          | `@RunWith(Suite.class)`           | `@SelectClasses`, `@SelectPackages`    |
+| **Test Lifecycle**       | No built-in support for lifecycle | `@BeforeAll`, `@AfterAll`              |
+| **Assertions**           | `Assert.assertEquals()`           | `Assertions.assertEquals()`            |
 
