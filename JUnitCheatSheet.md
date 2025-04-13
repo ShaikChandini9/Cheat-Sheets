@@ -1,5 +1,3 @@
-# Detailed JUnit Concepts
-
 ## 1. What is JUnit?
 JUnit is a widely used testing framework for Java that provides annotations and assertions to create and run tests. It allows developers to write repeatable, automated tests to ensure their code behaves as expected.
 
