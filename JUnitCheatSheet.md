@@ -147,3 +147,19 @@ void testThrowsException() {
 | **Test Lifecycle**       | No built-in support for lifecycle | `@BeforeAll`, `@AfterAll`              |
 | **Assertions**           | `Assert.assertEquals()`           | `Assertions.assertEquals()`            |
 
+```
+## Best Practices in JUnit Testing
+
+- **Write clear and simple tests**: Each test should be independent and focused on one functionality.
+  
+- **Use proper assertions**: Always validate the actual result against expected outcomes.
+  
+- **Group tests logically**: Use test suites or nested classes to group related tests.
+
+- **Test for edge cases**: Make sure to cover normal and boundary cases.
+
+- **Mock external dependencies**: Use mock objects (e.g., Mockito) for testing units in isolation.
+
+- **Use descriptive test names**: Make it clear what the test validates.
+
+- **Clean up after tests**: Ensure resources like files, databases, and network connections are closed after use.
