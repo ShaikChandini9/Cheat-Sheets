@@ -163,3 +163,23 @@ void testThrowsException() {
 - **Use descriptive test names**: Make it clear what the test validates.
 
 - **Clean up after tests**: Ensure resources like files, databases, and network connections are closed after use.
+
+## Mocking and Stubbing in JUnit
+
+### Mocking
+Mocking refers to creating mock objects for external dependencies like database connections or web services. Common frameworks for mocking are **Mockito** and **EasyMock**.
+
+### Stubbing
+Stubbing refers to providing predefined behaviors for mock objects. It allows you to define what a mock object should return when certain methods are called.
+
+### Example with Mockito:
+
+```java
+@Test
+void testMocking() {
+    List<String> mockedList = mock(List.class);
+    when(mockedList.size()).thenReturn(5);
+
+    assertEquals(5, mockedList.size());
+}
+
