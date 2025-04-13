@@ -183,3 +183,17 @@ void testMocking() {
     assertEquals(5, mockedList.size());
 }
 
+## JUnit 5 Extensions
+
+JUnit 5 introduces a powerful concept called **Extensions**. These are hooks into the lifecycle of tests that provide additional functionality (e.g., logging, parameterized tests, and custom test conditions).
+
+### `@ExtendWith`
+- The `@ExtendWith` annotation is used to register an extension for a test class or method.
+
+### Types of Extensions in JUnit 5:
+
+1. **Lifecycle extensions**: 
+   - These extensions manage test setup and teardown activities. For example, `@BeforeAll` and `@AfterAll` are lifecycle methods that can be extended using custom extensions.
+   
+2. **Test execution extensions**: 
+   - These extensions allow customizing the test execution logic, such as modifying the way tests are run or adding extra functionality during test execution.
