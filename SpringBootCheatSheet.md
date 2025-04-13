@@ -293,4 +293,3 @@ class UserControllerTest {
 | Setup | Manual | Auto-configured | Manual |
 | App Type | Any Java App | Web/API/Microservice | Web apps only |
 | Configuration | XML/Java/Annotation | Minimal config | XML/Annotation |
-
