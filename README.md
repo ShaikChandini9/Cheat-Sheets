@@ -95,13 +95,14 @@ This section explains how to design and develop microservices using Spring Boot.
 To run the Spring Boot application locally, use the following command:
 ```bash
 mvn spring-boot:run
+```
 This will start the application at http://localhost:8080.
 
-```
 7. Testing
 To run the unit tests with JUnit, use the following command:
 ```bash
 mvn test
+```
 JUnit tests will be executed, and the results will be displayed in the terminal.
 
 
