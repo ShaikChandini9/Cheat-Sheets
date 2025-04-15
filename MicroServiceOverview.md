@@ -1,4 +1,4 @@
-# 🧩 Microservices Architecture - Complete High-Level Overview
+# 🧩 Microservices
 
 ## ✅ What is Microservices Architecture?
 
