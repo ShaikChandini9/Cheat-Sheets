@@ -120,3 +120,114 @@ public class User {
 ## 3.Syntax for Repository.java
 ```java
 public interface UserRepository extends JpaRepository<User, Long> {}
+
+```
+## 4.Syntax for Controller.java
+```java
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+    @Autowired
+    private UserRepository repo;
+
+    @PostMapping
+    public User addUser(@RequestBody User user) {
+        return repo.save(user);
+    }
+
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable Long id) {
+        return repo.findById(id).orElse(null);
+    }
+}
+
+```
+## 🔁 Inter-service Communication
+
+### 1. REST Template
+
+```java
+RestTemplate restTemplate = new RestTemplate();
+User user = restTemplate.getForObject("http://user-service/users/1", User.class);
+
+```
+## 2. Feign Client (Spring Cloud)
+
+```java
+@FeignClient(name = "user-service")
+public interface UserClient {
+    @GetMapping("/users/{id}")
+    User getUserById(@PathVariable Long id);
+}
+
+```
+## ⚙️ Deployment (Docker)
+
+### Dockerfile
+
+```dockerfile
+FROM openjdk:17
+COPY target/user-service.jar user-service.jar
+ENTRYPOINT ["java", "-jar", "/user-service.jar"]
+
+```
+### docker-compose.yml
+
+```yaml
+version: '3'
+services:
+  user-service:
+    build: .
+    ports:
+      - "8081:8080"
+    depends_on:
+      - user-db
+  user-db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: users
+```
+## 📈 Monitoring and Observability
+
+### Spring Boot Actuator
+
+**pom.xml dependency:**
+
+```xml
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+
+```
+**Endpoints:**
+
+- `/actuator/health`
+- `/actuator/metrics`
+
+
+## 🧠 Best Practices
+```java
+- Keep services small and focused
+- API versioning
+- Use circuit breakers (Resilience4j, Hystrix)
+- Prefer async communication where possible
+- Secure APIs (JWT, OAuth2)
+- Use service mesh (Istio, Linkerd)
+- Maintain backward compatibility
+- Automate testing and CI/CD
+
+```
+## 🧾 Real-World Examples
+
+```
+| Company  | How They Use Microservices |
+|----------|----------------------------|
+| Netflix  | Streaming platform built on microservices |
+| Amazon   | Thousands of microservices for e-commerce |
+| Uber     | Domain-based microservices for ride-sharing |
+| Spotify  | Squads + microservices to manage features |
+
+
