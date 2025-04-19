@@ -253,4 +253,253 @@ void insertAtEnd(int data) {
     }
     temp.next = newNode;  // Link last node to new node
 }
+```
+#### 3. Insert After a Specific Node
 
+1. Traverse until the desired node.
+2. Make the new node point to the next node of the desired node.
+3. Make the desired node point to the new node.
+
+### Java Implementation
+
+```java
+void insertAfter(Node prevNode, int data) {
+    if (prevNode == null) {
+        System.out.println("Previous node cannot be null");
+        return;
+    }
+    Node newNode = new Node(data);
+    newNode.next = prevNode.next;  // Link new node to next of previous node
+    prevNode.next = newNode;       // Link previous node to new node
+}
+
+```
+### b. Deletion Operations
+
+#### 1.Delete from the Beginning (Head)
+
+1. Move the head to the next node.
+
+### Java Implementation
+
+```java
+void deleteAtBeginning() {
+    if (head == null) {
+        System.out.println("List is empty");
+        return;
+    }
+    head = head.next;  // Move head to next node
+}
+
+```
+#### 2.Delete from the End
+
+1. Traverse to the second last node.
+2. Set the second last node’s next to null.
+
+### Java Implementation
+
+```java
+void deleteAtEnd() {
+    if (head == null) {
+        System.out.println("List is empty");
+        return;
+    }
+
+    // If only one node exists
+    if (head.next == null) {
+        head = null;
+        return;
+    }
+
+    Node temp = head;
+    while (temp.next != null && temp.next.next != null) {
+        temp = temp.next;  // Traverse to second last node
+    }
+    temp.next = null;  // Remove last node
+}
+
+```
+#### 3.Delete by Value
+
+1. Traverse the list and find the node with the given value.
+2. Update the previous node’s next to point to the node after the current node.
+
+### Java Implementation
+
+```java
+void deleteByValue(int data) {
+    if (head == null) {
+        System.out.println("List is empty");
+        return;
+    }
+
+    // If head node contains the value
+    if (head.data == data) {
+        head = head.next;
+        return;
+    }
+
+    Node temp = head;
+    while (temp.next != null && temp.next.data != data) {
+        temp = temp.next;  // Traverse the list
+    }
+
+    if (temp.next == null) {
+        System.out.println("Value not found");
+        return;
+    }
+
+    temp.next = temp.next.next;  // Bypass the node to delete it
+}
+
+```
+### c. Search Operation
+
+#### Search by Value: Traverse the list to find the node containing the value.
+
+### Java Implementation
+
+```java
+boolean search(int key) {
+    Node temp = head;
+    while (temp != null) {
+        if (temp.data == key) {
+            return true;
+        }
+        temp = temp.next;
+    }
+    return false;  // Value not found
+}
+
+```
+#### d. Traversing the List (Display Operation)
+
+##### Display the List: Traverse through the list and print each node’s data.
+
+### Java Implementation
+
+```java
+void display() {
+    Node temp = head;
+    while (temp != null) {
+        System.out.print(temp.data + " -> ");
+        temp = temp.next;
+    }
+    System.out.println("null");
+}
+
+```
+### 5. Java Implementation of Singly Linked List
+
+```java
+class SinglyLinkedList {
+    Node head;
+
+    // Insert at the beginning
+    void insertAtBeginning(int data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+
+    // Insert at the end
+    void insertAtEnd(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+    }
+
+    // Display the list
+    void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+
+    // Delete from the beginning
+    void deleteAtBeginning() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        head = head.next;
+    }
+
+    // Delete from the end
+    void deleteAtEnd() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+        Node temp = head;
+        while (temp.next != null && temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
+
+    // Search for an element
+    boolean search(int key) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == key) {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SinglyLinkedList list = new SinglyLinkedList();
+
+        // Inserting elements
+        list.insertAtBeginning(10);
+        list.insertAtBeginning(20);
+        list.insertAtEnd(30);
+        list.insertAtEnd(40);
+
+        // Displaying list
+        list.display();  // Output: 20 -> 10 -> 30 -> 40 -> null
+
+        // Searching
+        System.out.println("Search 30: " + list.search(30));  // true
+        System.out.println("Search 100: " + list.search(100));  // false
+
+        // Deleting
+        list.deleteAtBeginning();
+        list.deleteAtEnd();
+        list.display();  // Output: 10 -> 30 -> null
+    }
+}
+```
+### ✅ 6. Advantages of Singly Linked List
+- **Efficient Insertion/Deletion** at the beginning and middle (constant time O(1)).
+- **Dynamic Size**: Unlike arrays, the size of a singly linked list can grow or shrink dynamically.
+
+### ❌ 7. Disadvantages of Singly Linked List
+- **Limited Access**: Accessing an element by index is O(n) time, whereas arrays allow O(1) access.
+- **Extra Space**: Each node needs extra space for the next pointer.
+- **No Backtracking**: Since it’s unidirectional, we cannot traverse backwards.
+
+### 💼 8. Use Cases of Singly Linked List
+- **Dynamic memory allocation**: When memory size is unpredictable (e.g., queues, stacks).
+- **Graph Representation**: Adjacency lists for graph implementations.
+- **Implementing other data structures**: Such as stacks, queues, etc.
