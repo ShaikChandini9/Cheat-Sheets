@@ -142,3 +142,14 @@ public class Main {
         System.out.println(list.get(1));  // Output: 20
     }
 }
+```
+# 📚 **LinkedList**
+
+# 🧠 1. What is a Linked List?
+
+A **Linked List** is a linear data structure where elements (called **nodes**) are stored in **non-contiguous memory locations**. Each node contains:
+
+- **Data**
+- A **reference (pointer)** to the next node
+
+This is different from **arrays**, where elements are stored in **contiguous memory locations**.
