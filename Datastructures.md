@@ -153,3 +153,20 @@ A **Linked List** is a linear data structure where elements (called **nodes**) a
 - A **reference (pointer)** to the next node
 
 This is different from **arrays**, where elements are stored in **contiguous memory locations**.
+
+# 📚 2. Types of Linked Lists
+
+| Type                  | Definition                                                                 |
+|-----------------------|---------------------------------------------------------------------------|
+| **Singly Linked List** | Each node has only one reference pointing to the next node.               |
+| **Doubly Linked List** | Each node has two references: one to the next node and one to the previous node. |
+| **Circular Linked List** | The last node points back to the head node instead of null, forming a circle. Can be singly or doubly circular. |
+
+# 📖 3. Definitions & Concepts
+
+- **Node**: An object containing data and a pointer/reference to the next (or previous) node.
+- **Head**: The first node of the list.
+- **Tail**: The last node of the list (in circular, it connects to head).
+- **Traversal**: Going through each node one by one.
+- **Insertion**: Adding a new node.
+- **Deletion**: Removing an existing node.
