@@ -503,3 +503,83 @@ public class Main {
 - **Dynamic memory allocation**: When memory size is unpredictable (e.g., queues, stacks).
 - **Graph Representation**: Adjacency lists for graph implementations.
 - **Implementing other data structures**: Such as stacks, queues, etc.
+
+# 📚 **Doubly Linked List**
+# Doubly Linked List (DLL)
+
+A **Doubly Linked List (DLL)** is a linear data structure made up of a sequence of nodes where each node contains:
+
+- **Data** – the value the node holds.
+- **Pointer to the previous node** (`prev`)
+- **Pointer to the next node** (`next`)
+
+🔁 This allows movement in **both directions** — forward and backward — unlike a singly linked list.
+
+## 📌 Node Structure
+
+Each node in a doubly linked list typically has the following structure:
+
+```java
+class Node {
+    int data;
+    Node prev;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.prev = null;
+        this.next = null;
+    }
+}
+```
+
+## 🚀 Key Features
+
+- Two-way traversal (`prev` and `next`)
+- Dynamic size (nodes can be added/removed at runtime)
+- More memory than singly linked list (due to extra `prev` pointer)
+
+## ✅ Advantages
+
+- Easier to delete a given node (with access to the node)
+- Can be traversed in both directions
+- More flexible than singly linked lists
+
+## ❌ Disadvantages
+
+- Requires extra space for the `prev` pointer
+- More complex to implement than singly linked lists
+
+## 🔧 Basic Components & Definitions
+
+| Term   | Definition |
+|--------|------------|
+| **Node** | A building block of the list that stores the data and pointers to the previous and next nodes. |
+| **Head** | The first node of the list. |
+| **Tail** | The last node of the list (optional but useful for backward traversal). |
+| **prev** | A reference to the previous node in the list. |
+| **next** | A reference to the next node in the list. |
+
+
+## 🧱 Structure of a Node
+
+```java
+class Node {
+    int data;          // stores value
+    Node prev;         // points to previous node
+    Node next;         // points to next node
+
+    Node(int data) {
+        this.data = data;
+        this.prev = null;
+        this.next = null;
+    }
+}
+```
+
+### 🔍 Explanation:
+
+- `int data`: Holds the actual data of the node.
+- `Node prev`: Points to the node before the current node.
+- `Node next`: Points to the node after the current node.
+
