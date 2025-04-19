@@ -170,3 +170,87 @@ This is different from **arrays**, where elements are stored in **contiguous mem
 - **Traversal**: Going through each node one by one.
 - **Insertion**: Adding a new node.
 - **Deletion**: Removing an existing node.
+
+# 📚 Singly Linked List
+
+## 1. What is a Singly Linked List (SLL)?
+
+A **Singly Linked List (SLL)** is a linear data structure where each element (called a **node**) contains two parts:
+
+- **Data**: Stores the actual data or value.
+- **Next**: A reference (or pointer) to the next node in the sequence. The last node points to **null**, indicating the end of the list.
+
+In a Singly Linked List, each node only points to the next node, so you can only traverse in one direction: from the **head** to the **tail**.
+
+## 2. Characteristics of Singly Linked Lists
+
+| Characteristic           | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| **Linear**               | The nodes are linked sequentially, one after the other.                      |
+| **Dynamic**              | Memory allocation is done during runtime, unlike arrays.                    |
+| **Efficient Insertion/Deletion** | Adding/removing elements at the beginning or middle is faster than arrays. |
+| **Unidirectional**       | Traversing is possible in only one direction (head to tail).                |
+
+## 3. Structure of a Singly Linked List Node
+
+Each node contains:
+
+- **Data**: Stores the actual data.
+- **Next**: Points to the next node in the list. If it is the last node, it points to **null**.
+
+### Java Implementation
+
+```java
+class Node {
+    int data;      // Data field
+    Node next;     // Reference to next node
+
+    // Constructor to initialize the node
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+```
+## 🚀 4. Basic Operations in a Singly Linked List
+
+### a. Insertion Operations
+
+#### 1.Insert at the Beginning (Head)
+
+1. Create a new node.
+2. Point the next of the new node to the current head.
+3. Update the head to point to the new node.
+
+### Java Implementation
+
+```java
+void insertAtBeginning(int data) {
+    Node newNode = new Node(data);
+    newNode.next = head;  // New node points to current head
+    head = newNode;       // Update head to new node
+}
+```
+#### 2. Insert at the End
+
+1. Traverse to the last node.
+2. Make the last node's next point to the new node.
+
+### Java Implementation
+
+```java
+void insertAtEnd(int data) {
+    Node newNode = new Node(data);
+    if (head == null) {
+        head = newNode;  // If list is empty, make new node head
+        return;
+    }
+
+    Node temp = head;
+    while (temp.next != null) {
+        temp = temp.next;  // Traverse to last node
+    }
+    temp.next = newNode;  // Link last node to new node
+}
+
