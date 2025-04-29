@@ -504,70 +504,42 @@ public class Main {
 - **Graph Representation**: Adjacency lists for graph implementations.
 - **Implementing other data structures**: Such as stacks, queues, etc.
 
-# 📚 **Doubly Linked List**
-# Doubly Linked List (DLL)
+# 📚 Doubly Linked List (DLL) – Full Detailed Explanation
 
-A **Doubly Linked List (DLL)** is a linear data structure made up of a sequence of nodes where each node contains:
+---
 
-- **Data** – the value the node holds.
-- **Pointer to the previous node** (`prev`)
-- **Pointer to the next node** (`next`)
+## 📖 1. What is a Doubly Linked List?
 
-🔁 This allows movement in **both directions** — forward and backward — unlike a singly linked list.
+A **Doubly Linked List** is a **linear data structure** made up of **nodes**, where each node contains:
+- **Data** — The value stored.
+- **Pointer to Previous Node (`prev`)** — Link to the previous node.
+- **Pointer to Next Node (`next`)** — Link to the next node.
 
-## 📌 Node Structure
+**Important:**
+- You can move **forward** (using `next`) **and backward** (using `prev`).
+- In contrast, a **Singly Linked List** allows only forward movement.
 
-Each node in a doubly linked list typically has the following structure:
+---
 
-```java
-class Node {
-    int data;
-    Node prev;
-    Node next;
+## 🔧 2. Basic Components & Definitions
 
-    Node(int data) {
-        this.data = data;
-        this.prev = null;
-        this.next = null;
-    }
-}
-```
+| Term | Definition |
+|-----|------------|
+| **Node** | A block containing data and links to the previous and next nodes. |
+| **Head** | The first node in the list. |
+| **Tail** | The last node in the list. Helpful for backward traversal. |
+| **prev** | Pointer to the previous node. |
+| **next** | Pointer to the next node. |
 
-## 🚀 Key Features
+---
 
-- Two-way traversal (`prev` and `next`)
-- Dynamic size (nodes can be added/removed at runtime)
-- More memory than singly linked list (due to extra `prev` pointer)
-
-## ✅ Advantages
-
-- Easier to delete a given node (with access to the node)
-- Can be traversed in both directions
-- More flexible than singly linked lists
-
-## ❌ Disadvantages
-
-- Requires extra space for the `prev` pointer
-- More complex to implement than singly linked lists
-
-## 🔧 Basic Components & Definitions
-
-| Term   | Definition |
-|--------|------------|
-| **Node** | A building block of the list that stores the data and pointers to the previous and next nodes. |
-| **Head** | The first node of the list. |
-| **Tail** | The last node of the list (optional but useful for backward traversal). |
-| **prev** | A reference to the previous node in the list. |
-| **next** | A reference to the next node in the list. |
-
-
-## 🧱 Structure of a Node
+## 🧱 3. Structure of a Node
 
 ```java
 class Node {
-    int data;          // stores value
-    Node prev;         // points to previous node
-    Node next;         // points to next node
+    int data;     // Stores data
+    Node prev;    // Points to previous node
+    Node next;    // Points to next node
 
     Node(int data) {
         this.data = data;
@@ -579,7 +551,276 @@ class Node {
 
 ### 🔍 Explanation:
 
-- `int data`: Holds the actual data of the node.
-- `Node prev`: Points to the node before the current node.
-- `Node next`: Points to the node after the current node.
+- `data`: Actual data inside the node.
+- `prev`: Points to the previous node.
+- `next`: Points to the next node.
 
+---
+
+## 🔥 4. How Does a Doubly Linked List Look?
+
+```
+null <- [data | prev | next] <-> [data | prev | next] <-> [data | prev | next] -> null
+```
+
+- Each node connects both ways.
+- First node's `prev` is `null`.
+- Last node's `next` is `null`.
+
+---
+
+## ⚙️ 5. Operations on Doubly Linked List
+
+### 5.1 Insertion Operations
+
+#### a. Insert at Beginning
+
+```java
+void insertAtBeginning(int data) {
+    Node newNode = new Node(data);
+    if (head != null) {
+        newNode.next = head;
+        head.prev = newNode;
+    }
+    head = newNode;
+}
+```
+
+#### b. Insert at End
+
+```java
+void insertAtEnd(int data) {
+    Node newNode = new Node(data);
+    if (head == null) {
+        head = newNode;
+        return;
+    }
+    Node temp = head;
+    while (temp.next != null) {
+        temp = temp.next;
+    }
+    temp.next = newNode;
+    newNode.prev = temp;
+}
+```
+
+#### c. Insert After a Given Node
+
+```java
+void insertAfter(Node prevNode, int data) {
+    if (prevNode == null) {
+        System.out.println("Previous node cannot be null");
+        return;
+    }
+    Node newNode = new Node(data);
+    newNode.next = prevNode.next;
+    if (prevNode.next != null) {
+        prevNode.next.prev = newNode;
+    }
+    prevNode.next = newNode;
+    newNode.prev = prevNode;
+}
+```
+
+---
+
+### 5.2 Deletion Operations
+
+#### a. Delete from Beginning
+
+```java
+void deleteFromBeginning() {
+    if (head == null) return;
+    head = head.next;
+    if (head != null) {
+        head.prev = null;
+    }
+}
+```
+
+#### b. Delete from End
+
+```java
+void deleteFromEnd() {
+    if (head == null) return;
+    if (head.next == null) {
+        head = null;
+        return;
+    }
+    Node temp = head;
+    while (temp.next != null) {
+        temp = temp.next;
+    }
+    temp.prev.next = null;
+}
+```
+
+#### c. Delete a Specific Node by Value
+
+```java
+void deleteByValue(int data) {
+    if (head == null) return;
+    Node temp = head;
+
+    while (temp != null && temp.data != data) {
+        temp = temp.next;
+    }
+    if (temp == null) return;  // Value not found
+
+    if (temp.prev != null) {
+        temp.prev.next = temp.next;
+    } else {
+        head = temp.next;
+    }
+    if (temp.next != null) {
+        temp.next.prev = temp.prev;
+    }
+}
+```
+
+---
+
+### 5.3 Traversal Operations
+
+#### a. Forward Traversal
+
+```java
+void displayForward() {
+    Node temp = head;
+    while (temp != null) {
+        System.out.print(temp.data + " -> ");
+        temp = temp.next;
+    }
+    System.out.println("null");
+}
+```
+
+#### b. Backward Traversal
+
+```java
+void displayBackward() {
+    if (head == null) return;
+    Node temp = head;
+    while (temp.next != null) {
+        temp = temp.next;
+    }
+    while (temp != null) {
+        System.out.print(temp.data + " -> ");
+        temp = temp.prev;
+    }
+    System.out.println("null");
+}
+```
+
+---
+
+## 📈 6. Full Java Program for Doubly Linked List
+
+```java
+class DoublyLinkedList {
+    Node head;
+
+    class Node {
+        int data;
+        Node prev, next;
+        Node(int data) {
+            this.data = data;
+            this.prev = null;
+            this.next = null;
+        }
+    }
+
+    // Insert at beginning
+    void insertAtBeginning(int data) {
+        Node newNode = new Node(data);
+        if (head != null) {
+            newNode.next = head;
+            head.prev = newNode;
+        }
+        head = newNode;
+    }
+
+    // Insert at end
+    void insertAtEnd(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    // Display forward
+    void displayForward() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+
+    // Display backward
+    void displayBackward() {
+        if (head == null) return;
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.prev;
+        }
+        System.out.println("null");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        DoublyLinkedList dll = new DoublyLinkedList();
+
+        dll.insertAtBeginning(10);
+        dll.insertAtBeginning(20);
+        dll.insertAtEnd(30);
+        dll.insertAtEnd(40);
+
+        System.out.println("Forward traversal:");
+        dll.displayForward(); // 20 -> 10 -> 30 -> 40 -> null
+
+        System.out.println("Backward traversal:");
+        dll.displayBackward(); // 40 -> 30 -> 10 -> 20 -> null
+    }
+}
+```
+
+---
+
+## ✅ 7. Advantages of Doubly Linked List
+
+- Two-way traversal (both directions).
+- Easier to insert and delete nodes compared to singly linked list when you have a pointer to the node.
+- Can easily move backward without extra space.
+
+---
+
+## ❌ 8. Disadvantages of Doubly Linked List
+
+- Requires more memory (extra `prev` pointer).
+- More complex to implement.
+- Slightly slower operations due to additional pointer updates.
+
+---
+
+## 💼 9. Applications of Doubly Linked List
+
+- Implementing navigation systems (forward and back buttons).
+- Browser history (moving forward and backward).
+- Undo/Redo operations in text editors.
+- Managing multiple tabs/windows.
+
+---
