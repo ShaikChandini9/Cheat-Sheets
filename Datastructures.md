@@ -504,7 +504,7 @@ public class Main {
 - **Graph Representation**: Adjacency lists for graph implementations.
 - **Implementing other data structures**: Such as stacks, queues, etc.
 
-# 📚 Doubly Linked List (DLL) – Full Detailed Explanation
+# 📚 Doubly Linked List (DLL)
 
 ---
 
